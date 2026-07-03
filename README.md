@@ -119,7 +119,6 @@ dpos-g3-cartel/
 ├── cenarios.csv
 ├── resultados.csv
 ├── README.md
-└── estrutura_relatorio.md
 ```
 
 ## Arquivos
@@ -149,35 +148,7 @@ As colunas principais são:
 | `cenario_legivel` | Descrição textual do cenário       |
 | `interpretacao`   | Interpretação curta do resultado   |
 
-## Requisitos
-
-O projeto utiliza apenas Python e bibliotecas padrão.
-
-Versão recomendada:
-
-```text
-Python 3.10 ou superior
-```
-
-Verifique a versão com:
-
-```bash
-python --version
-```
-
-ou:
-
-```bash
-python3 --version
-```
-
 ## Como executar
-
-Entre na pasta do projeto:
-
-```bash
-cd dpos-g3-cartel
-```
 
 Gere o arquivo de cenários:
 
@@ -206,44 +177,6 @@ Caso não queira sobrescrever o `resultados.csv`, use:
 python simulador_dpos.py --cenarios cenarios.csv --saida resultados_novo.csv
 ```
 
-## Erro comum no Windows
-
-Se aparecer:
-
-```text
-PermissionError: [Errno 13] Permission denied: 'resultados.csv'
-```
-
-Provavelmente o arquivo `resultados.csv` está aberto no Excel, LibreOffice, VSCode ou travado pelo OneDrive.
-
-Solução:
-
-1. Feche o arquivo.
-2. Rode novamente:
-
-```bash
-python simulador_dpos.py --cenarios cenarios.csv --saida resultados.csv
-```
-
-Ou gere com outro nome:
-
-```bash
-python simulador_dpos.py --cenarios cenarios.csv --saida resultados_novo.csv
-```
-
-## Como abrir o CSV no Excel
-
-Os arquivos CSV usam:
-
-```text
-Separador: ;
-Codificação: utf-8-sig
-```
-
-Isso facilita a abertura no Excel em português.
-
-Caso o Excel coloque tudo em uma única célula, importe o CSV manualmente e selecione o separador ponto e vírgula.
-
 ## Como interpretar os resultados
 
 Para analisar o `resultados.csv`, observe:
@@ -260,78 +193,6 @@ Exemplo de interpretação:
 Se o peso do cartel cresce mais na camada eleito do que na camada stake,
 isso indica que a eleição amplificou a concentração de poder do cartel.
 ```
-
-## Como subir no GitHub
-
-Inicialize o repositório:
-
-```bash
-git init
-```
-
-Adicione os arquivos:
-
-```bash
-git add .
-```
-
-Crie o commit:
-
-```bash
-git commit -m "add: simulador DPoS para analise de cartel"
-```
-
-Renomeie a branch principal:
-
-```bash
-git branch -M main
-```
-
-Adicione o repositório remoto:
-
-```bash
-git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-```
-
-Envie para o GitHub:
-
-```bash
-git push -u origin main
-```
-
-## Entrega esperada
-
-A entrega deve conter:
-
-```text
-simulador_dpos.py
-cenarios.csv
-resultados.csv
-relatorio.pdf
-```
-
-No formulário:
-
-| Campo     | Arquivo             |
-| --------- | ------------------- |
-| Simulador | `simulador_dpos.py` |
-| Cenário   | `cenarios.csv`      |
-| Resultado | `resultados.csv`    |
-| Relatório | `relatorio.pdf`     |
-
-## Observação sobre o relatório
-
-O relatório deve ser escrito pelo grupo.
-
-Este repositório fornece o código, os cenários e os resultados. A análise final deve explicar:
-
-- a patologia estudada;
-- a hipótese do experimento;
-- os parâmetros variados;
-- as métricas usadas;
-- os principais resultados;
-- as diferenças entre `stake`, `eleito` e `produzido`;
-- o que a patologia revela sobre os limites do DPoS.
 
 ## Conclusão esperada
 
